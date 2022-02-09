@@ -1,6 +1,6 @@
 # Remove Unmanaged Azure AD Guests 
 
-A command line multitenant app that allows admins to identify and reset the redemption of guests who have redeemed their B2B invitations with unmanaged (aka viral) Azure AD accounts. This app can run in report-only mode and/or automatically reset the redemption status of these accounts. If Email OTP is enabled, they will not be able to redeem with the same unmanaged accounts.
+A command line multitenant app that allows admins to identify and reset the redemption status of guests who have redeemed their B2B invitations with unmanaged (aka viral) Azure AD accounts. This app can run in report-only mode and/or automatically reset the redemption status of these accounts. If Email OTP is enabled, these guests will not be able to redeem with the same unmanaged Azure AD accounts.
 
 
 ## Getting Started
@@ -51,8 +51,9 @@ Insert Screenshot here
 
 8. Sign-in with an admin account who has appropriate permissions (see prereq list) and consent to the application.
 
-![image](https://user-images.githubusercontent.com/49490355/153291545-1df3be8c-21a5-483c-8dba-8bc770231c2b.png)
+![image](https://user-images.githubusercontent.com/49490355/153294601-bef4c95b-c562-4a42-a9f7-deee65bc262e.png)
 
 9. Return to the cmd prompt. The application will begin searching through all guest users and identifying unmanaged (viral) accounts. Additionally, the application will reset these unamanged accounts' redemption status if you selected an option to do so.
 
+Once you have enabled Email OTP and run this script, users will be unable to redeem invitations with unmanaged Azure AD accounts. You may safely delete this application from your Azure AD tenant.
 
