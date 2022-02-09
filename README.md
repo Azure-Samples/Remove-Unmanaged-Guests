@@ -7,9 +7,10 @@ A command line multitenant app that allows admins to identify and reset the rede
 
 ### Prerequisites
 
-- An admin account with one of the following roles: User Administrator, Guest Inviter, Application Administrator and Directory Writer, or is a Global Administator
+- To run the application and reset the redemption status of guests, you'll need an account with one of the following roles: Guest Inviter, User Administrator, Application Administrator and Directory Writer, or a Global Administator.
+- If User Consent is restricted, you will need a Cloud Application Admin, Application Admin, or Global Admin to grant consent.
 - [Enable Email OTP](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/one-time-passcode#enable-email-one-time-passcode) if you wish to reset the redemption status of unmanaged Azure AD accounts and force them to redeem with a different method.
-- Microsoft.NETCore.App Version 6.0.0 or greater
+- Microsoft.NETCore.App Version 6.0.0 or greater.
 
 Note: To verify if you have Microsoft.NETCore.App Version 6.0.0 or greater installed run the following:
 ```
@@ -53,7 +54,11 @@ Insert Screenshot here
 
 ![image](https://user-images.githubusercontent.com/49490355/153294601-bef4c95b-c562-4a42-a9f7-deee65bc262e.png)
 
-9. Return to the cmd prompt. The application will begin searching through all guest users and identifying unmanaged (viral) accounts. Additionally, the application will reset these unamanged accounts' redemption status if you selected an option to do so.
+9. If you selected option #2 or 3, select Continue. If you selected option #1, you will not see this prompt.
+
+![image](https://user-images.githubusercontent.com/49490355/153295803-fed3d15b-fe1d-478b-b07f-4fa43e41f01d.png)
+
+10. Return to the cmd prompt. The application will begin searching through all guest users and identifying unmanaged (viral) accounts. Additionally, the application will reset these unamanged accounts' redemption status if you selected an option to do so.
 
 Once you have enabled Email OTP and run this script, users will be unable to redeem invitations with unmanaged Azure AD accounts. You may safely delete this application from your Azure AD tenant.
 
