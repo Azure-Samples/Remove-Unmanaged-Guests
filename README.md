@@ -39,7 +39,7 @@ cd "C:\Users\JohnDoe\OneDrive - Microsoft\Documents\Remove-Unmanaged-Guests-main
 RemoveUnmanagedGuests.exe
 ```
 5. When prompted, enter your Azure AD [Tenant ID](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant) and press enter.
-6. Select one of the following options and press enter:
+6. Select one of the following options (1, 2, 3, or other) and press enter:
 - 1 - Reporting only = The app will identify how many viral users exist in your tenant and export a CSV file to the RemoveUnmanagedGuests file path.
 - 2 - Reset the redemption status and send invitation email = The app will [reset the redemption status](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/reset-redemption-status#use-the-azure-portal-to-reset-redemption-status) of all unmanaged Azure AD accounts and send the default invitation email.
 - 3 - Reset the redemption status but do NOT send invitation email = The will reset the redemption status of all unmanaged Azure AD account but will NOT send an email.
