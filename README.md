@@ -9,7 +9,7 @@ A command line multitenant app that allows admins to identify and reset the rede
 
 - To run the application and reset the redemption status of guests, you'll need an account with one of the following roles: Guest Inviter, User Administrator, Application Administrator and Directory Writer, or a Global Administator.
 - If User Consent is restricted, you will need a Cloud Application Admin, Application Admin, or Global Admin to grant consent.
-- [Enable Email OTP](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/one-time-passcode#enable-email-one-time-passcode) if you wish to reset the redemption status of unmanaged Azure AD accounts and force them to redeem with a different method.
+- Enable [Email OTP](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/one-time-passcode#enable-email-one-time-passcode) if you wish to reset the redemption status of unmanaged Azure AD accounts and force them to redeem with a different method. If Email OTP is disabled, users will redeem with the same unmanaged accounts.
 - Microsoft.NETCore.App Version 6.0.0 or greater.
 
 Note: To verify if you have Microsoft.NETCore.App Version 6.0.0 or greater installed run the following:
@@ -43,22 +43,24 @@ RemoveUnmanagedGuests.exe
 - 1 - Reporting only = The app will identify how many viral users exist in your tenant and export a CSV file to the RemoveUnmanagedGuests file path.
 - 2 - Reset the redemption status and send invitation email = The app will [reset the redemption status](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/reset-redemption-status#use-the-azure-portal-to-reset-redemption-status) of all unmanaged Azure AD accounts and send the default invitation email.
 - 3 - Reset the redemption status but do NOT send invitation email = The will reset the redemption status of all unmanaged Azure AD account but will NOT send an email.
+- Any other key will exit the application.
 
-Insert Screenshot here
+![image](https://user-images.githubusercontent.com/49490355/153450212-86fb1393-2a04-4d3c-8eba-d9e3ce46ee01.png)
 
 7. Once you have made your selection, open a browser, navigate to https://microsoft.com/devicelogin, and enter the device code given in the cmd prompt.
 
 ![image](https://user-images.githubusercontent.com/49490355/153293375-f3d80c38-b943-4679-b906-152ea93f782d.png)
 
-8. Sign-in with an admin account who has appropriate permissions (see prereq list) and consent to the application.
+8. Sign-in with an admin account who has appropriate permissions (see prereq list) and consent to the application. If you have previously consented, you will not see this prompt.
 
 ![image](https://user-images.githubusercontent.com/49490355/153294601-bef4c95b-c562-4a42-a9f7-deee65bc262e.png)
 
-9. If you selected option #2 or 3, select Continue. If you selected option #1, you will not see this prompt.
+9. Select Continue to sign-in to the application.
 
 ![image](https://user-images.githubusercontent.com/49490355/153295803-fed3d15b-fe1d-478b-b07f-4fa43e41f01d.png)
 
 10. Return to the cmd prompt. The application will begin searching through all guest users and identifying unmanaged (viral) accounts. Additionally, the application will reset these unamanged accounts' redemption status if you selected an option to do so.
+11. Once the application is done running, the number of guests and viral users identified will be displayed and you will be returned to the menu. You can either select another option or click any other key to exit. If you want to see the list of viral users identified or reset, you can view the ViralUsers.csv file in the RemoveUnmanagedGuests file path. 
 
 Once you have enabled Email OTP and run this script, users will be unable to redeem invitations with unmanaged Azure AD accounts. You may safely delete this application from your Azure AD tenant.
 
