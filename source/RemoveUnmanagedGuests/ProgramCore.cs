@@ -162,8 +162,9 @@ namespace RemoveUnmanagedGuests
                 guestUserCount += response.CurrentPage.Count;
             }
 
-            Console.WriteLine($"Found {guestUserCount} guest users and {unmanagedUserList.Count} viral users. See UnmanagedUsers.csv for details.");
-            using StreamWriter file = new("UnmanagedUsers.csv");
+            string fileName = "UnmanagedUsers.csv";
+            using StreamWriter file = new(fileName);
+            Console.WriteLine($"Found {guestUserCount} guest users and {unmanagedUserList.Count} viral users. See {Path.GetFullPath($"./{fileName}")} for details.");
             foreach (var user in unmanagedUserList)
             {
                 file.WriteLine($"{user.Id},{user.Email}");

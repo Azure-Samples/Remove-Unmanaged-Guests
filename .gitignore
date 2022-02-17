@@ -1,0 +1,9 @@
+# Build generated files in source
+/source/**/objd/**/*
+/source/**/obj/**/*
+/source/**/bin/**/*
+
+# VS and VS code config
+/source/**/.vs/**/*
+/source/**/.vscode/**/*
+/source/**/*.DotSettings
