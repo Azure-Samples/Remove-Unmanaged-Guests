@@ -20,7 +20,14 @@ A command line multitenant app that allows admins to identify and reset the rede
 
 2. Extract the files to a file location of your choice.
 3. Open Visual Studio 2022 and select "Open a project or solution". Navigate to ...\Remove-Unmanaged-Guests-main\Remove-Unmanaged-Guests-main\source and open RemoveUnmanagedGuests.sln
-4. Select "Build" and click "Build Solution". 
+4. The app by default points to a multitenant app hosted by Microsoft. You can run the application as is and it will create an enterprise app in your directory. However, if you wish to use your own app instance you may do so by performing the following:
+- Create an [App Registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal). 
+- Give the app a name. Under Supported Account Types select "Accounts in any organizational directory (Any Azure AD directory - Multitenant)". Click Register. 
+Known limitation: You cannot run this application as a single tenant application.
+- Go to the "Authentication" blade of your app registration and set "Allow public client flows" to Yes. Click Save.
+- Leave the API permissions as the default values - Microsoft Graph Delegated User.read.
+- In Visual Studio, go to appsettings.json. Change the "clientId" value your application (client) Id and save the project.
+5. Select "Build" and click "Build Solution". 
 
 ![image](https://user-images.githubusercontent.com/49490355/154562959-6b50a9e2-2c04-4070-ba71-dddb934bfe38.png)
 
