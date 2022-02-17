@@ -10,18 +10,7 @@ A command line multitenant app that allows admins to identify and reset the rede
 - To run the application and reset the redemption status of guests, you'll need an account with one of the following roles: Guest Inviter, User Administrator, Application Administrator and Directory Writer, or a Global Administator.
 - If User Consent is restricted, you will need a Cloud Application Admin, Application Admin, or Global Admin to grant consent.
 - Enable [Email OTP](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/one-time-passcode#enable-email-one-time-passcode) if you wish to reset the redemption status of unmanaged Azure AD accounts and force them to redeem with a different method. If Email OTP is disabled, users will redeem with the same unmanaged accounts.
-- Microsoft.NETCore.App Version 6.0.0 or greater.
-
-Note: To verify if you have Microsoft.NETCore.App Version 6.0.0 or greater installed run the following:
-```
-dotnet --list-runtimes
-```
-
-![image](https://user-images.githubusercontent.com/49490355/153287705-190bc4a3-c1ca-45ee-9da3-16ef57b90937.png)
-
-If you do not have the minimum version, click [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime) to download it. Select the appropriate OS and select "Download x64" under the "Run console apps" section.
-
-![image](https://user-images.githubusercontent.com/49490355/153292885-5516e6ea-2c8e-4f8c-b25d-adcd6d6eaad1.png)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) - This app requires .NET 6 
 
 
 ### Installation and Run Steps
@@ -30,16 +19,25 @@ If you do not have the minimum version, click [here](https://dotnet.microsoft.co
 ![image](https://user-images.githubusercontent.com/49490355/153286919-df57da72-d027-4079-aaa4-da4271a5ab2c.png)
 
 2. Extract the files to a file location of your choice.
-3. Open a cmd prompt and change directories to the RemoveUnmanagedGuests file. For example:
-```
-cd "C:\Users\JohnDoe\OneDrive - Microsoft\Documents\Remove-Unmanaged-Guests-main\Remove-Unmanaged-Guests-main\RemoveUnmanagedGuests"
-```
-4. Enter the following and press enter:
-```
-RemoveUnmanagedGuests.exe
-```
-5. When prompted, enter your Azure AD [Tenant ID](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant) and press enter.
-6. Select one of the following options (1, 2, 3, or other) and press enter:
+3. Open Visual Studio 2022 and select "Open a project or solution". Navigate to ...\Remove-Unmanaged-Guests-main\Remove-Unmanaged-Guests-main\source and open RemoveUnmanagedGuests.sln
+4. Select "Build" and click "Build Solution". 
+
+![image](https://user-images.githubusercontent.com/49490355/154562959-6b50a9e2-2c04-4070-ba71-dddb934bfe38.png)
+
+You should get a message saying Build: 1 succeeded.
+
+![image](https://user-images.githubusercontent.com/49490355/154563221-93432bb6-adae-4559-8ab8-8e6d92c46a6f.png)
+
+
+5. Select "Debug" and click "Start Debugging" or press F5. 
+
+![image](https://user-images.githubusercontent.com/49490355/154565892-2a23e7ed-ab28-4b7a-8758-014cde15ccfb.png)
+
+6. A command line prompt should open. Enter your Azure AD [Tenant ID](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant) and press enter.
+
+![image](https://user-images.githubusercontent.com/49490355/154566299-874b704c-0e06-4330-b59d-e8fe9f932361.png)
+
+7. Select one of the following options (1, 2, 3, or other) and press enter:
 - 1 - Reporting only = The app will identify how many viral users exist in your tenant and export a CSV file to the RemoveUnmanagedGuests file path.
 - 2 - Reset the redemption status and send invitation email = The app will [reset the redemption status](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/reset-redemption-status#use-the-azure-portal-to-reset-redemption-status) of all unmanaged Azure AD accounts and send the default invitation email.
 - 3 - Reset the redemption status but do NOT send invitation email = The will reset the redemption status of all unmanaged Azure AD account but will NOT send an email.
