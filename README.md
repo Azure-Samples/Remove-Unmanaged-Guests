@@ -58,7 +58,7 @@ You should get a message saying "Build: 1 succeeded".
 
 8. Sign-in with an admin account who has appropriate permissions (see prereq list) and consent to the application. If you have previously consented, you will not see this prompt.
 
-![image](https://user-images.githubusercontent.com/49490355/153294601-bef4c95b-c562-4a42-a9f7-deee65bc262e.png)
+![image](https://user-images.githubusercontent.com/49490355/154717310-4794f9c1-e719-4d73-98ef-454a704b8cb1.png)
 
 9. Select **Continue** to sign-in to the application.
 
