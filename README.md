@@ -54,6 +54,8 @@ You should get a message saying "Build: 1 succeeded".
 
 7. Once you have made your selection, open a browser, navigate to https://microsoft.com/devicelogin, and enter the device code given in the cmd prompt.
 
+Note: This is using the [Device Authorization Grant](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-device-code) Flow. Once you have the code, you have 15 minutes before it expires.
+
 ![image](https://user-images.githubusercontent.com/49490355/153293375-f3d80c38-b943-4679-b906-152ea93f782d.png)
 
 8. Sign-in with an admin account who has appropriate permissions (see prereq list) and consent to the application. If you have previously consented, you will not see this prompt.
