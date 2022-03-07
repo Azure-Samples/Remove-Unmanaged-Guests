@@ -20,7 +20,7 @@ A command line multitenant app that allows admins to identify and reset the rede
 
 2. Extract the files to a file location of your choice.
 3. Open Visual Studio 2022 and select **Open a project or solution**. Navigate to *.\Remove-Unmanaged-Guests-main\Remove-Unmanaged-Guests-main\source* and open **RemoveUnmanagedGuests.sln**.
-4. The app by default points to a multitenant app hosted by Microsoft. You can run the application as is and it will create an enterprise app in your directory. However, if you wish to use your own app instance you may do so by performing the following:
+4. The app by default points to a multitenant app hosted by Microsoft. You can run the application as is and it will create an enterprise app in your directory. You may skip to step 5 if you'd like to. However, if you wish to use your own app instance you may do so by performing the following:
     1. Create an [App Registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal). 
     2. Give the app a name. Under **Supported Account Types** select **Accounts in any organizational directory (Any Azure AD directory - Multitenant)**. Click **Register**. 
 **Known limitation:** You cannot run this application as a single tenant application.
