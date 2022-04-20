@@ -101,8 +101,8 @@ namespace RemoveUnmanagedGuests
                         .Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                     return Task.CompletedTask;
                 }));
+                graphClient.HttpProvider.OverallTimeout = TimeSpan.FromMinutes(5);
                 HttpClient httpClient = new();
-
                 IList<UnmanagedUser> users = await GetUnmanagedUsers(graphClient, httpClient);
                 await AddInvitationsInBatch(graphClient, users);
 
