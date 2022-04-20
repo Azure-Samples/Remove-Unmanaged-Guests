@@ -149,7 +149,7 @@ namespace RemoveUnmanagedGuests
             Console.WriteLine("(This may take a few minutes, depending on the number of users in your tenant)");
             Console.ResetColor();
             Console.WriteLine();
-            var response = await graphClient.Users.Request().Filter("userType eq 'Guest'").GetAsync();
+            var response = await graphClient.Users.Request().Filter("userType eq 'Guest'").Select("id,mail,userPrincipalName,identities").GetAsync();
             List<UnmanagedUser> unmanagedUserList = new();
 
             long guestUserCount = 0;
